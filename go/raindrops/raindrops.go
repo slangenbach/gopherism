@@ -2,34 +2,24 @@ package raindrops
 
 import "fmt"
 
-// Determins if number is a factor
-func isFactor(number int, factor int) bool {
-	return number%factor == 0
-}
-
 // Converts number into string representing factors
 func Convert(number int) string {
-	var factorSum int
+	var result string
 	factors := []int{3, 5, 7}
 	rules := map[int]string{
-		3:  "Pling",
-		5:  "Plang",
-		7:  "Plong",
-		8:  "PlingPlang",
-		10: "PlingPlong",
-		12: "PlangPlong",
-		15: "PlingPlangPlong",
+		3: "Pling",
+		5: "Plang",
+		7: "Plong",
 	}
 
 	for _, factor := range factors {
-		if isFactor(number, factor) {
-			factorSum += factor
+		if number%factor == 0 {
+			result += rules[factor]
 		}
 	}
 
-	res, ok := rules[factorSum]
-	if ok {
-		return res
+	if len(result) != 0 {
+		return result
 	} else {
 		return fmt.Sprint(number)
 	}
