@@ -17,7 +17,7 @@ func RollADie() int {
 
 // GenerateWandEnergy returns a random float64 f with 0.0 <= f < 12.0.
 func GenerateWandEnergy() float64 {
-	return rand.Float64() * 12
+	return rand.Float64() * 12 // say what?
 
 }
 
