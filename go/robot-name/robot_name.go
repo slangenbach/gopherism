@@ -15,10 +15,10 @@ var nameRegistry = make(map[string]bool)
 
 // Max number of names available
 const allNames = 26 * 26 * 1000
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 // Generate random name consisting of two letters and three digits
 func GenerateName() string {
-	const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	rand.Seed(time.Now().UnixNano())
 
 	genLetter := func() string {
